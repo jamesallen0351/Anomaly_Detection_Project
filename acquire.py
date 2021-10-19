@@ -23,7 +23,7 @@ def curriculum_data():
 
     sql_query = '''select *
     FROM logs
-    JOIN cohorts on cohorts.id = logs.user_id
+    LEFT JOIN cohorts on cohorts.id = logs.user_id
     '''
     
     return pd.read_sql(sql_query, get_connection('curriculum_logs'))
